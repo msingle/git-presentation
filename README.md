@@ -1,6 +1,6 @@
 # Git & GitHub
 
-This is just a presentation I did for work, decided to share it.
+This is just a presentation I forked for work.
 
 ## How To View It
 
