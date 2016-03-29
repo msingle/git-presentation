@@ -107,7 +107,7 @@
         </section>
 
         <section>
-          <h2>Fundamental</h2>
+          <h1>Fundamental</h1>
           <p>Branching and merging are <strong>cheap</strong> and <strong>easy</strong></p>
         </section>
 
@@ -240,7 +240,7 @@
             <div class="fragment">
               <p>Here are a few useful flags for when you're adding files:</p>
               <ul>
-                <li class="fragment">--force</li>
+                <!-- <li class="fragment">--force</li> -->
                 <li class="fragment">-A, --all</li>
               </ul>
               <p class="fragment">
@@ -293,12 +293,14 @@
               <p>Useful options:</p>
               <ul>
                 <li>-a, --all</li>
+                <li>-m, --message</li>
               </ul>
             </div>
 
             <aside class="notes">
               <ul>
                 <li><strong>-a, --all</strong>: automatically stage files that have been modified and deleted, but not new files</li>
+                <li><strong>-m, --message</strong>: Include commit message inline (don't open editor)</li>
                 <li>
               </ul>
             </aside>
@@ -328,6 +330,8 @@
               <img src="/img/git-commit-too-long.jpg" />
               <img src="/img/git-commit-too-long-2.jpg" />
             </div>
+            <div class="fragment">
+              <p>We will have a standardized format (including issue numbers etc) later</p>
           </section>
 
           <!-- pushing those changes -->
@@ -413,6 +417,91 @@
                 <code>git merge upstream/next</code>
               </p>
             </div>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h1>Stashing</h1>
+          </section>
+
+          <section>
+            <h2>Again, What?</h2>
+            <img src="/img/ku-xlarge.gif" class="fragment"/>
+          </section>
+
+          <section>
+            <h2>Actually, That's Pretty Close</h2>
+            <h4>Not The Dog Part Though</h4>
+            <h6><small>That'd Just Be Silly</small></h6>
+          </section>
+
+          <section>
+            <h2>What is Stashing?</h2>
+            <p>Stashing is similar to a commit, but without the commitment.</p>
+            <p class="fragment">It lets you store your work so you can switch branches, without having to make a commit</p>
+          </section>
+
+          <section>
+            <h3>An Example</h3>
+            <p>Say you've been working on some code:</p>
+            <pre>
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#      modified:   index.html
+            </pre>
+
+            <p>And you want to switch to another branch to quickly fix a bug.</p>
+          </section>
+
+          <section>
+            <h3>Stash Yo Stuff</h3>
+            <p>Use <code>git stash</code>:</p>
+            <pre>
+$ git stash
+Saved working directory and index state \
+  "WIP on master: 049d078 added the index file"
+HEAD is now at 049d078 added the index file
+(To restore them type "git stash apply")
+            </pre>
+          </section>
+
+          <section>
+            <h3>Clean!</h3>
+            <p>Now your working directory is clean!</p>
+            <pre>
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+            </pre>
+          </section>
+
+          <section>
+            <h3>Getting It Back</h3>
+            <p>Now you've done everything you needed to, and you want to get back to where you were:</p>
+            <pre>
+$ git stash apply
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#
+#      modified:   index.html
+            </pre>
+          </section>
+
+          <section>
+            <h3>Stash Multiple Things?</h3>
+            <p>You can keep making changes and stashing them.</p>
+            <p>If you want to see what you've got stashed, use <code>git stash list</code>:</p>
+            <pre>
+$ git stash list
+stash@{0}: WIP on master: 049d078 added the index file
+stash@{1}: WIP on master: c264051... Revert "added file_size"
+stash@{2}: WIP on master: 21d80a5... added number to log
+            </pre>
           </section>
         </section>
 
@@ -980,90 +1069,6 @@ ee5d5900 IdentityModel.php (Anthony Chernikov 2014-02-11 14:48:51 -0800 23)
           </section>
         </section>
 
-        <section>
-          <section>
-            <h1>Stashing</h1>
-          </section>
-
-          <section>
-            <h2>Again, What?</h2>
-            <img src="/img/ku-xlarge.gif" class="fragment"/>
-          </section>
-
-          <section>
-            <h2>Actually, That's Pretty Close</h2>
-            <h4>Not The Dog Part Though</h4>
-            <h6><small>That'd Just Be Silly</small></h6>
-          </section>
-
-          <section>
-            <h2>What is Stashing?</h2>
-            <p>Stashing is similar to a commit, but without the commitment.</p>
-            <p class="fragment">It lets you store your work so you can switch branches, without having to make a commit</p>
-          </section>
-
-          <section>
-            <h3>An Example</h3>
-            <p>Say you've been working on some code:</p>
-            <pre>
-$ git status
-# On branch master
-# Changes to be committed:
-#   (use "git reset HEAD <file>..." to unstage)
-#
-#      modified:   index.html
-            </pre>
-
-            <p>And you want to switch to another branch to quickly fix a bug.</p>
-          </section>
-
-          <section>
-            <h3>Stash Yo Stuff</h3>
-            <p>Use <code>git stash</code>:</p>
-            <pre>
-$ git stash
-Saved working directory and index state \
-  "WIP on master: 049d078 added the index file"
-HEAD is now at 049d078 added the index file
-(To restore them type "git stash apply")
-            </pre>
-          </section>
-
-          <section>
-            <h3>Clean!</h3>
-            <p>Now your working directory is clean!</p>
-            <pre>
-$ git status
-# On branch master
-nothing to commit (working directory clean)
-            </pre>
-          </section>
-
-          <section>
-            <h3>Getting It Back</h3>
-            <p>Now you've done everything you needed to, and you want to get back to where you were:</p>
-            <pre>
-$ git stash apply
-# On branch master
-# Changes not staged for commit:
-#   (use "git add <file>..." to update what will be committed)
-#
-#      modified:   index.html
-            </pre>
-          </section>
-
-          <section>
-            <h3>Stash Multiple Things?</h3>
-            <p>You can keep making changes and stashing them.</p>
-            <p>If you want to see what you've got stashed, use <code>git stash list</code>:</p>
-            <pre>
-$ git stash list
-stash@{0}: WIP on master: 049d078 added the index file
-stash@{1}: WIP on master: c264051... Revert "added file_size"
-stash@{2}: WIP on master: 21d80a5... added number to log
-            </pre>
-          </section>
-        </section>
 
         <section>
           <section>
@@ -1152,7 +1157,7 @@ stash@{2}: WIP on master: 21d80a5... added number to log
               <li class="fragment">Rebase a branch that has been made public</li>
               <li class="fragment">Included unrelated edits in a commit</li>
               <li class="fragment">Make logic changes & whitespace/prettifying changes in the same commit</li>
-              <li class="fragment">Use git for large binary files</li>
+              <!-- <li class="fragment">Use git for large binary files</li> -->
             </ul>
           </section>
 
@@ -1173,6 +1178,7 @@ stash@{2}: WIP on master: 21d80a5... added number to log
 
           <section>
             <ul>
+              <li class="fragment">README.md (at the top of the repo) will automatically be rendered from markdown to html in Github</li>
               <li class="fragment">You can use 'blame' in GitHub</li>
               <li class="fragment">Add <strong>?w=1</strong> to any diff URL to ignore whitespace</li>
               <li class="fragment">Add <strong>.diff</strong> or <strong>.patch</strong> to compare view page, pull request, or commit page URLs</li>
@@ -1184,10 +1190,47 @@ stash@{2}: WIP on master: 21d80a5... added number to log
         </section>
         <section>
           <section>
+            <h1>But I hate GUIs</h1>
+            <p class="fragment">That's OK</p>
+            <p class="fragment">The following are available</p>
+          </section>
+          <section>
+            <h1>Windows</h1>
+            <p>https://git-cola.github.io/</p>
+            <p>http://git-for-windows.github.io/</p>
+            <p>https://desktop.github.com/</p>
+            <p>https://gitextensions.github.io/</p>
+            <p>https://www.sourcetreeapp.com/</p>
+          </section>
+          <section>
+            <h1>Linux</h1>
+            <p>https://git-cola.github.io/</p>
+            <p>https://wiki.gnome.org/Apps/Giggle/</p>
+            <p>https://wiki.gnome.org/Apps/Gitg/</p>
+          </section>
+          <section>
+            <h1>Mac</h1>
+            <p>https://git-cola.github.io/</p>
+            <p>https://desktop.github.com/</p>
+            <p>https://www.sourcetreeapp.com/</p>
+          </section>
+        </section>
+        <section>
+          <section>
             <h1>That's All Folks</h1>
             <p>
-              Email me at matthew.singletary@perfect.com
+              Email me at matthew.singletary@perfect.com / @msingle on slack 
             </p>
+            <p>
+              Ask questions on #git slack channel
+            </p>
+
+            <p>Other resources available on the wiki:</p>
+            <p>https://wiki.hubwoo.com/x/BgYNAg</p>
+            <p class="fragment">The link to the wiki will be available on slack</p>
+
+          </section>
+          <section>
 					  <p>
 						  <small>Created by <a href="http://seanhagen.ca"> Patrick Hagen</a> / <a href="http://twitter.com/seanhagen">@seanhagen</a></small>
 						  <small>Forked and updated by Matt Singletary</small>
@@ -1200,12 +1243,6 @@ stash@{2}: WIP on master: 21d80a5... added number to log
 
             <p>Or clone it from git@github.com:msingle/git-presentation.git</p>
 
-            <p>Other resources:</p>
-            <ul>
-              <li>http://zachholman.com/talk/git-github-secrets/</li>
-              <li>http://git-scm.com/book/</li>
-              <li>http://nathanleclaire.com/blog/2014/09/14/dont-be-scared-of-git-rebase/</li>
-            </ul>
           </section>
 
         </section>
