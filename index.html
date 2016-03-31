@@ -37,11 +37,11 @@
 					<h1>Git & GitHub</h1>
 					<h3>Git you some knowledge!</h3>
 					<p>
-						<small>Forked and updated by Matt Singletary / @msingle on slack </small>
-          </p>
-					<p>
 						<small>Created by <a href="http://seanhagen.ca"> Patrick Hagen</a> / <a href="http://twitter.com/seanhagen">@seanhagen</a></small>
 					</p>
+					<p>
+						<small>Forked and updated by Matt Singletary / @msingle on slack </small>
+          </p>
 				</section>
 
         <section>
@@ -55,16 +55,20 @@
           <h3 class="fragment">Second: GitHub</h3>
           <h2 class="fragment">Ready?</h2>
           <img class="fragment" src="/img/2eobgr6.gif"/>
+				</section>
 
-					<aside class="notes">
-					</aside>
+				<section>
+					<h2>What Isn't This For?</h2>
+          <ul>
+            <li class="fragment">All the commands/flags</li>
+            <li class="fragment">Figuring out all the workflow for your team.</li>
+          </ul>
 				</section>
 
         <section>
           <h2>So, What Is Git?</h2>
           <p class="fragment">At it's core, it's a <em>distributed revision control</em> system</p>
           <p class="fragment">As well as a <em>source code management</em> system</p>
-          <img class="fragment" src="/img/dFVsfqM.gif" />
         </section>
 
         <section>
@@ -74,63 +78,43 @@
 
         <section>
           <h2>It's Distributed</h2>
-        </section>
-
-        <section>
-          <h2>Distributed?</h2>
           <p class="fragment">No central service <em>(required)</em> to manage the revisions</p>
-          <aside class="notes">
-            <p>This means that every person has a full copy of the repository</p>
-            <p>It can be pretty awesome, but it's also got some cons</p>
-            <ul>
-              <li>PRO: can work offline!</li>
-              <li>PRO: don't need to contact a central server to commit changes or view history</li>
-              <li>PRO: every copy is now a backup of the code</li>
-              <li>CON: repos can get HUGE</li>
-            </ul>
-          </aside>
+          <p class="fragment">This means that every person has a full copy of the repository</p>
+          <ul>
+            <li class="fragment">can work offline!</li>
+            <li class="fragment">don't need to contact a central server to commit changes or view history</li>
+            <li class="fragment">every copy is now a backup of the code</li>
+          </ul>
         </section>
 
-        <section>
-          <h2>What Makes Git</h2>
-          <h1>Awesome?</h1>
-        </section>
         <section>
           <h2>It's Branching!</h2>
         </section>
 
         <section>
-          <h2>Explore Ideas</h2>
+          <h3>Explore Ideas</h3>
           <p>Create branches to explore an idea, discard the branch if it doesn't work out</p>
           <img src="/img/notawesome_zpsdc2d095f.gif" />
         </section>
 
         <section>
-          <h2>Explore Ideas</h2>
+          <h3>Explore Ideas</h3>
           <p>Or merge the branch in if it turns out to be an awesome idea</p>
           <img src="/img/excited-adventure-time.gif" />
         </section>
 
         <section>
-          <h1>Fundamental</h1>
+          <h3>Fundamental</h3>
           <p>Branching and merging are <strong>cheap</strong> and <strong>easy</strong></p>
         </section>
 
         <section>
-          <h2>What Makes Git</h2>
-          <h1>Awesome?</h1>
-        </section>
-        <section>
-          <h2>Supports Just About Any Workflow</h2>
+          <h3>Supports Just About Any Workflow</h3>
           <p class="fragment">Easily create branches for features, bugs, tasks</p>
           <p class="fragment">Merge code quickly between those branches</p>
           <p class="fragment">Share the code really easily</p>
         </section>
 
-        <section>
-          <h2>What Makes Git</h2>
-          <h1>Awesome?</h1>
-        </section>
         <section>
           <h2>It's Got GitHub</h2>
           <p class="fragment">While this isn't a feature of the tool, GitHub makes Git awesome.</p>
@@ -145,14 +129,6 @@
 
         <section>
           <section>
-            <h2>Getting Started</h2>
-            <h3>Cloning Your Way To Victory</h3>
-            <h5>AKA: The Star Wars Approach</h5>
-            <h6><small>Not Really</small></h6>
-            <img src="/img/Clone_Troopers_by_unit138.gif" />
-          </section>
-
-          <section>
             <h2>Cloning Gets You Started</h2>
             <code>git clone &lt;repository url&gt;</code>
             <p>Now you've got a copy of the code!</p>
@@ -162,7 +138,6 @@
           <section>
             <h2>Examples Repo URLs</h2>
             <ul>
-
               <li><code>/home/sean/some-project</code></li>
               <li><code>ssh://[user@]host:path/to/repo.git</code></li>
           </section>
@@ -170,31 +145,10 @@
           <section>
             <h2>Perfect on GitHub</h2>
             <div class="fragment">
-              <p>We (Perfect Commerce) will have our projects on GitHub under:</p>
+              <p>We will have our projects on GitHub under:</p>
               <p><code>git@github.com:perfectcommerce/&lt;repo name&gt;.git</code></p>
             </div>
           </section>
-
-          <section>
-            <h2>You can clone this!</h2>
-            <div class="fragment">
-              <p>This presentation can be cloned with:</p>
-              <p><code>git clone git@github.com:msingle/git-presentation.git</code></p>
-            </div>
-          </section>
-
-          <section>
-            <h2>Tips!</h2>
-            <p>Here are a few flags that you might find useful when cloning:</p>
-            <ul>
-              <li><code>--branch &lt;name&gt;</code><br/> clone a specific branch</li>
-              <li><code>--depth &lt;num&gt;</code><br/> only clone the specified number of revisions</li>
-            </ul>
-          </section>
-
-				  <aside class="notes">
-            <p><strong>depth</strong>: useful when you want to get a shallow copy, like if you're deploying a demo to server</p>
-				  </aside>
 
         </section>
 
@@ -245,7 +199,6 @@
             <div class="fragment">
               <p>Here are a few useful flags for when you're adding files:</p>
               <ul>
-                <!-- <li class="fragment">--force</li> -->
                 <li class="fragment">-A, --all</li>
               </ul>
               <p class="fragment">
@@ -382,23 +335,6 @@
           <section>
             <h2>Careful!</h2>
             <h3>Git auto-merges when you do a pull</h3>
-          </section>
-
-          <section>
-            <h2>Fetch & Merge</h2>
-            <p>Another way to accomplish a pull is to fetch and then merge:</p>
-            <p>
-              <code>git fetch origin</code><br/>
-              <code>git merge origin/master</code>
-            </p>
-            <p>This just gives you more control over what's happening.</p>
-          </section>
-
-          <section>
-            <h3>Remotes</h3>
-            <p>Because git is a <strong>distributed</strong> system, you can have multiple remotes that you can push to.</p>
-            <p>If you want to add one, use the following:</p>
-            <p><code>git remote add &lt;name&gt; &lt;url&gt;</code></p>
           </section>
 
           <section data-width="1024">
@@ -632,14 +568,6 @@ stash@{2}: WIP on master: 21d80a5... added number to log
 
             <p>Checking out a branch using the <br/><code>git checkout -b &lt;name&gt; &lt;remote/branch-name&gt;</code><br/> ensures that the branch <i>tracks</i> the same branch on the remote</p>
 
-            <div class="fragment">
-              <p>A long form way of doing the same would be the following:</p>
-              <ul>
-                <li class="fragment"><code>git branch my-feature</code></li>
-                <li class="fragment"><code>git checkout my-feature</code></li>
-                <li class="fragment"><code>git branch -u origin/my-feature</code></li>
-              </ul>
-            </div>
           </section>
 
           <section>
@@ -670,21 +598,13 @@ stash@{2}: WIP on master: 21d80a5... added number to log
             <div class="fragment">
               <p>Now, merge in the code from next.</p>
               <p><code>git merge next</code></p>
+              <p class="fragment">you need to get comfortable with this</p>
             </div>
           </section>
 
           <section>
             <h2>Keeping 'next' Up-to-date</h2>
-            <p>If you've forked your repository on GitHub, here's two ways to keep your version of the 'next' branch up-to-date.</p>
-            <div class="fragment">
-              <p><code>git checkout upstream-next</code></p>
-              <p><code>git pull</code></p>
-              <p><code>git checkout next</code></p>
-              <p><code>git merge upstream-next</code></p>
-            </div>
-            <br/>
-            <div class="fragment">
-              <p>Alternatively:</p>
+            <div>
               <p><code>git pull upstream next</code></p>
             </div>
           </section>
@@ -804,12 +724,7 @@ stash@{2}: WIP on master: 21d80a5... added number to log
             <h2>So what is it?</h2>
             <p class="fragment">Rebasing re-writes the commit history.</p>
             <p class="fragment">This can be dangerous</p>
-          </section>
-
-          <section>
-            <h2>Dangerous?</h2>
             <p class="fragment">Well, not so much dangerous as supremely annoying to deal with</p>
-            <p class="fragment">More detail later on</p>
           </section>
 
           <section>
@@ -896,16 +811,7 @@ stash@{2}: WIP on master: 21d80a5... added number to log
         <section>
           <section>
             <h1>Cherry Picking</h1>
-          </section>
-
-          <section>
-            <h2>What?</h2>
-            <img class="fragment" src="/img/cherrypicking.png" />
-          </section>
-
-          <section>
-            <h2>No.</h2>
-            <p>Cherry picking is taking a commit ( or a range of commits ) from another branch and bringing them over to your current one.</p>
+            <p>taking a commit ( or a range of commits ) from another branch and bringing them over to your current one.</p>
             <p class="fragment">It's similar to merging, but with much more fine-grained control.</p>
           </section>
 
@@ -942,29 +848,12 @@ Date:   Thu Feb 20 18:47:06 2014 -0800
         <section>
           <section>
             <h1>Bisecting</h1>
-          </section>
-
-          <section>
-            <h4>Couldn't Find A Funny Image</h4>
-            <img src="/img/sMNudhu.gif" />
-            <h6>So Have James Baxter On A Ball</h6>
-          </section>
-
-          <section>
-            <h2>What is it?</h2>
-            <h4>And Why Should I Care?</h4>
-
             <p class="fragment"><code>git bisect</code> helps you find a bad commit between any two commits.</p>
           </section>
 
           <section>
             <h3>I know that doesn't sound awesome</h3>
             <h2>But hold on.</h2>
-          </section>
-
-          <section>
-            <h2>How To Run It</h2>
-            <p>You can run <code>git bisect</code> manually or automatically.</p>
           </section>
 
           <section>
@@ -995,14 +884,11 @@ Date:   Thu Feb 20 18:47:06 2014 -0800
 
           <section>
             <h2>Pretty Awesome</h2>
-            <h3>But You Said Something About Automated Bisecting?</h3>
-            <br/><br/>
-            <h1 class="fragment">I did!</h1>
+            <h3>But Doing things manually sounds like a lot of work</h3>
           </section>
 
           <section>
             <h2>Automated Bisecting</h2>
-            <h3>Throw Robots Into The Mix!</h3>
 
             <p>To automate the process is pretty similar to how you do it manually.</p>
             <p>Use <code>git bisect start</code> to start,</p>
@@ -1017,11 +903,6 @@ Date:   Thu Feb 20 18:47:06 2014 -0800
             <p class="fragment">So if you've got a bunch of commits</p>
             <p class="fragment">and you know one of them is breaking a particular unit test</p>
             <p class="fragment">give <code>git bisect run</code> the command to run the unit test</p>
-          </section>
-
-          <section>
-            <h1>OMG</h1>
-            <img src="/img/6a00d834a16dcf69e2019b02177600970d-800wi.gif" />
           </section>
 
           <section>
@@ -1108,10 +989,11 @@ ee5d5900 IdentityModel.php (Anthony Chernikov 2014-02-11 14:48:51 -0800 23)
             <h2>Forking?</h2>
             <h5>Sounds Dirty</h5>
 
-            <p class="fragment">Forking just creates a copy of a repository in your account.</p>
-            <p class="fragment">This lets you work on code and get as messy as you like.</p>
-            <p class="fragment">But keeps the main repo in a pretty usable state for QA</p>
-            <p class="fragment"><small>Most of the time</small></p>
+            <div class="fragment">
+              <p>Forking just creates a copy of a repository in your account.</p>
+              <p>This lets you work on code and get as messy as you like.</p>
+              <p>But keeps the main repo in a pretty usable state for QA</p>
+            </div>
 
           </section>
 
@@ -1171,7 +1053,6 @@ ee5d5900 IdentityModel.php (Anthony Chernikov 2014-02-11 14:48:51 -0800 23)
               <li class="fragment">Rebase a branch that has been made public</li>
               <li class="fragment">Included unrelated edits in a commit</li>
               <li class="fragment">Make logic changes & whitespace/prettifying changes in the same commit</li>
-              <!-- <li class="fragment">Use git for large binary files</li> -->
             </ul>
           </section>
 
